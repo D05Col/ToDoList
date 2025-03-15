@@ -1,22 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, inject, Inject } from '@angular/core';
 import { TaskServiceService } from '../services/task-service.service';
-import { NgModel } from '@angular/forms';
+import { FormsModule, } from '@angular/forms';
 
 @Component({
   selector: 'app-title-input',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './title-input.component.html',
   styleUrl: './title-input.component.sass'
 })
 export class TitleInputComponent {
-  private taskService: TaskServiceService;
-  currentTitle: string = "";
+  private taskService: TaskServiceService = inject(TaskServiceService);
+  currentTitle: string = "Title";
 
-  Add(){
+  public Add(){
     this.taskService.Add(this.currentTitle);
   }
 
-  constructor(private tasksService: TaskServiceService){
-    this.taskService = tasksService;
+  constructor(){
   }
 }

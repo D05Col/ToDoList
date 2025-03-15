@@ -6,7 +6,7 @@ import { ToDoTask } from '../models/ToDoTask';
 })
 export class TaskServiceService {
 
-  tasks: WritableSignal<ToDoTask[]> = signal([]);
+  public tasks: WritableSignal<ToDoTask[]> = signal([]);
   count: number = 0;
 
   Add(title: string): void{
@@ -20,10 +20,6 @@ export class TaskServiceService {
     this.tasks.update(list => {
       return list.filter(item => item.id != id)
     })
-  }
-
-  GetTasks(): ToDoTask[] {
-    return this.tasks(); 
   }
 
   constructor() {

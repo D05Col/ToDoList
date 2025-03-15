@@ -1,4 +1,4 @@
-import { Component, Directive } from '@angular/core';
+import { Component, Directive, inject } from '@angular/core';
 import { TaskServiceService } from '../services/task-service.service';
 import { ToDoTask } from '../models/ToDoTask';
 import {NgFor} from '@angular/common';
@@ -10,10 +10,10 @@ import {NgFor} from '@angular/common';
   styleUrl: './task-list.component.sass'
 })
 export class TaskListComponent {
-  taskList: ToDoTask[] = [];
+  private taskService = inject(TaskServiceService);
+  taskList: ToDoTask[] = this.taskService.tasks();
 
-  constructor(private taskService: TaskServiceService){
-    this.taskList = taskService.GetTasks();
+  constructor(){
   }
 
 }
