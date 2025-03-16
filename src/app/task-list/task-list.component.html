@@ -1,8 +1,9 @@
 <div id="task-list-wrapper">
-    {{}}
-    <ul *ngFor="let item of taskList">
-        <li>
+    <ul>
+        <li *ngFor="let item of taskList">
             <label>{{ item.title }}</label>
+            
+            <input type="button" id="complete-button"/>
             <input type="button" id="delete-button"/>
         </li>
     </ul>
