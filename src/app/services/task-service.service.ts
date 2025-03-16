@@ -22,6 +22,10 @@ export class TaskServiceService {
     })
   }
 
+  Complete(id: number): void {
+    this.tasks().find(item => item.id == id)
+  }
+
   constructor() {
    }
 }

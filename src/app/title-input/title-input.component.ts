@@ -14,6 +14,7 @@ export class TitleInputComponent {
 
   public Add(){
     this.taskService.Add(this.currentTitle);
+    this.currentTitle = '';
   }
 
   constructor(){

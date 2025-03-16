@@ -2,7 +2,6 @@ import { Component, Directive, inject } from '@angular/core';
 import { TaskServiceService } from '../services/task-service.service';
 import { ToDoTask } from '../models/ToDoTask';
 import {NgFor} from '@angular/common';
-
 @Component({
   selector: 'app-task-list',
   imports: [NgFor],
@@ -10,9 +9,14 @@ import {NgFor} from '@angular/common';
   styleUrl: './task-list.component.sass'
 })
 export class TaskListComponent {
-  private taskService = inject(TaskServiceService);
-  taskList: ToDoTask[] = this.taskService.tasks();
+  taskService = inject(TaskServiceService);
 
+  Complete(id: number){
+    this.taskService.Complete(id);
+  }
+  Remove(id: number){
+    this.taskService.Remove(id);
+  }
   constructor(){
   }
 
