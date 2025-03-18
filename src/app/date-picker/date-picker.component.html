@@ -1,4 +1,7 @@
 
 <div id="date-picker-wrapper"> 
-    Date Picker
+    <input matInput [matDatePicker]="picker">
+    <mat-hint>MM/DD/YY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
 </div>

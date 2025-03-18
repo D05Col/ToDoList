@@ -3,12 +3,15 @@ import { RouterOutlet } from '@angular/router';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { TitleInputComponent } from './title-input/title-input.component';
 import { TaskListComponent } from './task-list/task-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TaskServiceService } from './services/task-service.service';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, DatePickerComponent, TitleInputComponent, TaskListComponent, FormsModule],
+  imports: [RouterOutlet, DatePickerComponent, TitleInputComponent, TaskListComponent, FormsModule, MatDatepickerModule, MatInputModule, MatNativeDateModule, FormsModule, ReactiveFormsModule],
   providers: [TaskServiceService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
