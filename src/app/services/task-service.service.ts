@@ -7,11 +7,11 @@ import { ToDoTask } from '../models/ToDoTask';
 export class TaskServiceService {
 
   public tasks: WritableSignal<ToDoTask[]> = signal([]);
-  count: number = 0;
+  count = 0;
 
   Add(title: string): void{
     this.tasks.update(list => {
-      let task = new ToDoTask(title, ++this.count);
+      const task = new ToDoTask(title, ++this.count);
       return [...list, task];
     });
   } 
@@ -25,7 +25,4 @@ export class TaskServiceService {
   Complete(id: number): void {
     this.tasks().find(item => item.id == id)
   }
-
-  constructor() {
-   }
 }

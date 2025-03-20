@@ -1,7 +1,7 @@
 export class ToDoTask{
     id: number;
     title: string;
-    completed: boolean = false;
+    completed = false;
 
     constructor(title: string, id: number){
         this.title = title;

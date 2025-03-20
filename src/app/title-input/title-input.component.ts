@@ -1,4 +1,4 @@
-import { Component, inject, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TaskServiceService } from '../services/task-service.service';
 import { FormsModule, } from '@angular/forms';
 
@@ -10,13 +10,10 @@ import { FormsModule, } from '@angular/forms';
 })
 export class TitleInputComponent {
   private taskService: TaskServiceService = inject(TaskServiceService);
-  currentTitle: string = "Title";
+  currentTitle = "Title";
 
   public Add(){
     this.taskService.Add(this.currentTitle);
     this.currentTitle = '';
-  }
-
-  constructor(){
   }
 }

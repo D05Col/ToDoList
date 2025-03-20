@@ -1,6 +1,5 @@
-import { Component, Directive, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TaskServiceService } from '../services/task-service.service';
-import { ToDoTask } from '../models/ToDoTask';
 import {NgFor} from '@angular/common';
 @Component({
   selector: 'app-task-list',
@@ -17,7 +16,4 @@ export class TaskListComponent {
   Remove(id: number){
     this.taskService.Remove(id);
   }
-  constructor(){
-  }
-
 }
