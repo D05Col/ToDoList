@@ -6,7 +6,7 @@ import { ToDoTask } from '../models/ToDoTask';
 })
 export class TaskServiceService {
 
-  public tasks: WritableSignal<ToDoTask[]> = signal([]);
+  public tasks: WritableSignal<ToDoTask[]> = signal(JSON.parse(localStorage.getItem("tasks") ?? "[]"));
   count = 0;
 
   Add(title: string): void{
@@ -14,15 +14,19 @@ export class TaskServiceService {
       const task = new ToDoTask(title, ++this.count);
       return [...list, task];
     });
+    
+    localStorage.setItem("tasks", JSON.stringify(this.tasks()));
   } 
 
   Remove(id: number): void {
     this.tasks.update(list => {
-      return list.filter(item => item.id != id)
+      return list.filter(item => item.id != id);
     })
+    localStorage.setItem("tasks", JSON.stringify(this.tasks()));
   }
 
   Complete(id: number): void {
     this.tasks().find(item => item.id == id)
+    localStorage.setItem("tasks", JSON.stringify(this.tasks()));
   }
 }
