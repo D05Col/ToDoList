@@ -6,7 +6,7 @@ import { FormsModule, } from '@angular/forms';
   selector: 'app-title-input',
   imports: [FormsModule],
   templateUrl: './title-input.component.html',
-  styleUrl: './title-input.component.sass'
+  styleUrl: './title-input.component.scss'
 })
 export class TitleInputComponent {
   private taskService: TaskServiceService = inject(TaskServiceService);

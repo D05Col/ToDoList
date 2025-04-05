@@ -9,7 +9,7 @@ import { MatHint } from '@angular/material/form-field';
   imports: [MatDatepickerModule, ReactiveFormsModule, MatNativeDateModule, MatDatepicker, MatHint, FormsModule],
   providers: [MatDatepickerModule, MatNativeDateModule, ReactiveFormsModule],
   templateUrl: './date-picker.component.html',
-  styleUrl: './date-picker.component.sass'
+  styleUrl: './date-picker.component.scss'
 })
 export class DatePickerComponent {
 

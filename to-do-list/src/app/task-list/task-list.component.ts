@@ -5,7 +5,7 @@ import {NgFor} from '@angular/common';
   selector: 'app-task-list',
   imports: [NgFor],
   templateUrl: './task-list.component.html',
-  styleUrl: './task-list.component.sass'
+  styleUrl: './task-list.component.scss'
 })
 export class TaskListComponent {
   taskService = inject(TaskServiceService);

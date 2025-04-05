@@ -26,7 +26,14 @@ export class TaskServiceService {
   }
 
   Complete(id: number): void {
-    this.tasks().find(item => item.id == id)
+    let item = this.tasks().find(item => item.id == id);
+    if (item != null){
+      item.completed = true;
+    }
+    else{
+      console.log(`Could not find item with Id ${id} to complete`);
+    }
+    
     localStorage.setItem("tasks", JSON.stringify(this.tasks()));
   }
 }

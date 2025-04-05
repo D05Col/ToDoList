@@ -1,0 +1,12 @@
+@import '.\..\app.component.scss';
+.task-item{
+    display: flex;
+    align-items: center;
+}
+
+.complete{
+    background-color: $green;
+}
+.active{
+    background-color: $red;
+}

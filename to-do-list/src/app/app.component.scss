@@ -1,0 +1,8 @@
+// Not sure if centering main is good practice, but then again I'm not a professional CSSer
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

@@ -1,12 +1,22 @@
 <div id="task-list-wrapper">
     <ul>
         <li *ngFor="let item of taskService.tasks()">
-            <div class="task-item">
-                <span>{{ item.title }}</span>
-                
-                <button id="complete-button" (click)="Complete(item.id)">Complete</button>
-                <button id="delete-button" (click)="Remove(item.id)">Delete</button>
-            </div>
+            @if(item.completed) {
+                <div class="task-item complete">
+                    <span>{{ item.title }}</span>
+                    
+                    <button id="complete-button" (click)="Complete(item.id)">Complete</button>
+                    <button id="delete-button" (click)="Remove(item.id)">Delete</button>
+                </div>
+            }
+            @else{
+                <div class="task-item active">
+                    <span>{{ item.title }}</span>
+                    
+                    <button id="complete-button" (click)="Complete(item.id)">Complete</button>
+                    <button id="delete-button" (click)="Remove(item.id)">Delete</button>
+                </div>
+            }
         </li>
     </ul>
 </div>
