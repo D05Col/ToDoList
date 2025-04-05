@@ -1,17 +1,18 @@
-import { Injectable, signal, WritableSignal } from '@angular/core';
+import { effect, Injectable, signal, WritableSignal } from '@angular/core';
 import { ToDoTask } from '../models/ToDoTask';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskServiceService {
-
   public tasks: WritableSignal<ToDoTask[]> = signal(JSON.parse(localStorage.getItem("tasks") ?? "[]"));
+  public date: WritableSignal<Date> = signal(JSON.parse(localStorage.getItem("date") ?? JSON.stringify(new Date())));
+  
   count = 0;
 
   Add(title: string): void{
     this.tasks.update(list => {
-      const task = new ToDoTask(title, ++this.count);
+      const task = new ToDoTask(title, ++this.count, this.date());
       return [...list, task];
     });
     
@@ -35,5 +36,11 @@ export class TaskServiceService {
     }
     
     localStorage.setItem("tasks", JSON.stringify(this.tasks()));
+  }
+
+  constructor(){
+    effect(() => {
+      localStorage.setItem("date", JSON.stringify(this.date()));
+    });
   }
 }

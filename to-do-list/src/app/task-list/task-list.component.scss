@@ -1,7 +1,13 @@
-@import '.\..\app.component.scss';
+@import './../../styles.scss';
+li{
+    list-style-type: none;
+}
 .task-item{
     display: flex;
     align-items: center;
+}
+#button-wrapper {
+    align-items: end;
 }
 
 .complete{

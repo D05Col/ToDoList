@@ -1,8 +1,7 @@
 
 <div id="date-input">
-    <input matInput [matDatepicker]="picker">
+    <input matInput placeholder="Choose Date" [matDatepicker]="picker" (dateChange)="handleDateChange($event)">
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
 </div>
-<mat-hint>MM/DD/YY</mat-hint>
 
