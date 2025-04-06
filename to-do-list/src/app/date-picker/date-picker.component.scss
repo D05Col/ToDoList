@@ -1,10 +1,25 @@
-
+@import './../../styles.scss';
+input {
+    background-color: $foreground;
+    color: #FFFFFF;
+    border-radius: 10px;
+    text-align: center;
+}
 #date-picker-wrapper {
     display: inline-flex;
     flex-direction: column;
 }
 
 #date-input{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 10px;
+    justify-content: center;
     color: #111;
     background-color: #2D2D2D;
     border: 1px solid;
