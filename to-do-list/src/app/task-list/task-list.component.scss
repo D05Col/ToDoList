@@ -1,0 +1,35 @@
+@import './../../styles.scss';
+
+table {
+    background-color: $foreground;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.task-item{
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-width: 0px;
+    border-bottom: 2px;
+    border-style: solid;
+    border-color: $orange;
+    button {
+        margin: 5px;
+        padding: 10px;
+        height: fit-content;
+        width: fit-content;
+    }
+}
+
+#delete-button{
+    color: $white;
+    background-color: $red;
+}
+#complete-button {
+    color: $white;
+    background-color: $green;
+}

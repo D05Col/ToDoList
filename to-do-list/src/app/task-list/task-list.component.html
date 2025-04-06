@@ -1,0 +1,23 @@
+<div id="task-list-wrapper">
+    <table>
+        <tr *ngFor="let item of taskService.tasks()">
+            @if(item.completed) {
+                <div class="task-item">
+                    <span class="item-title">{{ item.title }} {{ item.date }}</span>
+                    
+                    <button mat-raised-button id="delete-button" (click)="Remove(item.id)">Delete</button>
+                </div>
+            }
+            @else{
+                <div class="task-item">
+                    <span class="item-title">{{ item.title }}</span>
+
+                    <div id="button-wrapper">
+                        <button mat-raised-button id="complete-button" (click)="Complete(item.id)">Complete</button>
+                        <button mat-raised-button id="delete-button" (click)="Remove(item.id)">Delete</button>
+                    </div>
+                </div>
+            }
+        </tr>
+    </table>
+</div>
