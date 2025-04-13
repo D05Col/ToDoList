@@ -1,5 +1,21 @@
 @import './../../styles.scss';
 #modal-wrapper{
+    display: flex;
+    flex-direction: column;
     color: $white;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(1.5px);
+    padding: 20px;
+    width: fit-content;
+    min-width: 240px;
 }
+
+#cancel-button{
+    color: $white;
+    background-color: $red;
+}
+#confirm-button {
+    color: $white;
+    background-color: $green;
+    margin-left: 10px;
+}
+

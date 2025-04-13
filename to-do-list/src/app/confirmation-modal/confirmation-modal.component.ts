@@ -1,9 +1,10 @@
 import { Component, Inject } from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DialogModel } from '../models/DialogModel';
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-confirmation-modal',
-  imports: [],
+  imports: [MatButtonModule],
   templateUrl: './confirmation-modal.component.html',
   styleUrl: './confirmation-modal.component.scss'
 })
@@ -18,6 +19,6 @@ export class ConfirmationModalComponent {
     this.dialogRef.close(false);
   }
   onConfirmClick(): void {
-    let dialogClosed = this.dialogRef.close(true)
+    this.dialogRef.close(true);
   }
 }

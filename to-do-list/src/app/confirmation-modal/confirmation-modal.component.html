@@ -1,5 +1,7 @@
 <div id="modal-wrapper">
     <h3>{{data.message}}</h3>
-    <button mat-raised-button (click)="onCancelClick()">Cancel</button>
-    <button mat-raised-button (click)="onConfirmClick()" cdkFocusInitial>Confirm</button>
+    <div id="button-section">
+        <button id="cancel-button" mat-raised-button (click)="onCancelClick()">Cancel</button>
+        <button id="confirm-button" mat-raised-button (click)="onConfirmClick()" cdkFocusInitial>Confirm</button>    
+    </div>
 </div>

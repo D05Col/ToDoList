@@ -1,13 +1,16 @@
 <div id="task-list-wrapper">
     <table>
-        <mat-tab-group>
+        <mat-tab-group animationDuration="0ms">
             <mat-tab label="Active"> 
                 <tr *ngFor="let item of taskService.tasks()">
                     @if(!item.completed ) {   
                         <div class="task-item">
-                            <span class="item-title">{{ item.title }} {{ item.date }}</span>
-                            <button mat-raised-button id="complete-button" (click)="Complete(item.id)">Complete</button>
-                            <button mat-raised-button id="delete-button" (click)="Remove(item.id)">Delete</button>
+                            <span class="item-title">{{ item.title }}</span>
+                            
+                            <div class="button-section">
+                                <button mat-raised-button id="delete-button" (click)="Remove(item.id)">Delete</button>
+                                <button mat-raised-button id="complete-button" (click)="Complete(item.id)">Complete</button>
+                            </div>
                         </div>
                     }
                 </tr>            
@@ -16,8 +19,10 @@
                 <tr *ngFor="let item of taskService.tasks()">
                     @if(item.completed ) {   
                         <div class="task-item">
-                            <span class="item-title">{{ item.title }} {{ item.date }}</span>
-                            <button mat-raised-button id="delete-button" (click)="Remove(item.id)">Delete</button>
+                            <span class="item-title">{{ item.title }}</span>
+                            <div class="button-section">
+                                <button mat-raised-button id="delete-button" (click)="Remove(item.id)">Delete</button>
+                            </div>
                         </div>
                     }
                 </tr>
