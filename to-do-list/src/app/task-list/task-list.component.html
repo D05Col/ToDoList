@@ -2,7 +2,10 @@
     <table>
         <mat-tab-group animationDuration="0ms">
             <mat-tab label="Active"> 
-                <tr *ngFor="let item of taskService.tasks()">
+                @if(this.taskService.activeTasks().length == 0) {
+                    <div class="no-tasks"><p>No active tasks</p></div>
+                }
+                <tr *ngFor="let item of taskService.activeTasks()">
                     @if(!item.completed ) {   
                         <div class="task-item">
                             <span class="item-title">{{ item.title }}</span>
@@ -16,7 +19,10 @@
                 </tr>            
             </mat-tab>
             <mat-tab label="Completed">
-                <tr *ngFor="let item of taskService.tasks()">
+                @if(this.taskService.completedTasks().length == 0) {
+                    <div class="no-tasks"><p>No completed tasks</p></div>
+                }
+                <tr *ngFor="let item of taskService.completedTasks()">
                     @if(item.completed ) {   
                         <div class="task-item">
                             <span class="item-title">{{ item.title }}</span>

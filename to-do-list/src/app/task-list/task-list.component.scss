@@ -28,14 +28,21 @@ mat-tab-group tr {
     border-bottom: 2px;
     border-style: solid;
     border-color: $orange;
-    min-width: 300px;
-    width: fit-content;
+    min-width: 416px;
     button {
         margin: 5px;
         padding: 10px;
         height: fit-content;
         width: fit-content;
     }
+}
+
+.no-tasks {
+    color: $white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #delete-button{
