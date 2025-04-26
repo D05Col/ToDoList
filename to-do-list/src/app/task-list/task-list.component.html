@@ -1,23 +1,38 @@
 <div id="task-list-wrapper">
     <table>
-        <tr *ngFor="let item of taskService.tasks()">
-            @if(item.completed) {
-                <div class="task-item">
-                    <span class="item-title">{{ item.title }} {{ item.date }}</span>
-                    
-                    <button mat-raised-button id="delete-button" (click)="Remove(item.id)">Delete</button>
-                </div>
-            }
-            @else{
-                <div class="task-item">
-                    <span class="item-title">{{ item.title }}</span>
-
-                    <div id="button-wrapper">
-                        <button mat-raised-button id="complete-button" (click)="Complete(item.id)">Complete</button>
-                        <button mat-raised-button id="delete-button" (click)="Remove(item.id)">Delete</button>
-                    </div>
-                </div>
-            }
-        </tr>
+        <mat-tab-group animationDuration="0ms">
+            <mat-tab label="Active"> 
+                @if(this.taskService.activeTasks().length == 0) {
+                    <div class="no-tasks"><p>No active tasks</p></div>
+                }
+                <tr *ngFor="let item of taskService.activeTasks()">
+                    @if(!item.completed ) {   
+                        <div class="task-item">
+                            <span class="item-title">{{ item.title }}</span>
+                            
+                            <div class="button-section">
+                                <button mat-raised-button id="delete-button" (click)="Remove(item.id)">Delete</button>
+                                <button mat-raised-button id="complete-button" (click)="Complete(item.id)">Complete</button>
+                            </div>
+                        </div>
+                    }
+                </tr>            
+            </mat-tab>
+            <mat-tab label="Completed">
+                @if(this.taskService.completedTasks().length == 0) {
+                    <div class="no-tasks"><p>No completed tasks</p></div>
+                }
+                <tr *ngFor="let item of taskService.completedTasks()">
+                    @if(item.completed ) {   
+                        <div class="task-item">
+                            <span class="item-title">{{ item.title }}</span>
+                            <div class="button-section">
+                                <button mat-raised-button id="delete-button" (click)="Remove(item.id)">Delete</button>
+                            </div>
+                        </div>
+                    }
+                </tr>
+            </mat-tab>
+        </mat-tab-group>
     </table>
 </div>

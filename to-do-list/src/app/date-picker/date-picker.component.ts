@@ -1,13 +1,12 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {MatDatepicker, MatDatepickerInputEvent, MatDatepickerModule} from '@angular/material/datepicker'
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
-import { MatHint } from '@angular/material/form-field';
 import { TaskServiceService } from '../services/task-service.service';
 @Component({
   selector: 'app-date-picker',
-  imports: [MatDatepickerModule, ReactiveFormsModule, MatNativeDateModule, MatDatepicker, MatHint, FormsModule],
+  imports: [MatDatepickerModule, ReactiveFormsModule, MatNativeDateModule, MatDatepicker, FormsModule],
   providers: [MatDatepickerModule, MatNativeDateModule, ReactiveFormsModule],
   templateUrl: './date-picker.component.html',
   styleUrl: './date-picker.component.scss'
