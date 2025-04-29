@@ -1,9 +1,0 @@
-{
-    "version": 2,
-    "builds": [
-      { "src": "dist/to-do-list/**", "use": "@vercel/static" }
-    ],
-    "routes": [
-      { "src": "/(.*)", "dest": "/index.html" }
-    ]
-  }
