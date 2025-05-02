@@ -1,4 +1,14 @@
+@use '@angular/material' as mat;
 @import './../../styles.scss';
+
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+mat-tab-group {
+  @include mat.tabs-overrides((
+    active-indicator-color: $orange,
+    divider-color: red,
+  ));
+}
 
 table {
     background-color: $foreground;
@@ -15,7 +25,6 @@ mat-tab-group tr {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .task-item{
