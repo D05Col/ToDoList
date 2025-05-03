@@ -5,8 +5,16 @@ import { ToDoTask } from '../models/ToDoTask';
   providedIn: 'root'
 })
 export class TaskServiceService {
-  public activeTasks: WritableSignal<ToDoTask[]> = signal(JSON.parse(localStorage.getItem("activeTasks") ?? "[]"));
-  public completedTasks: WritableSignal<ToDoTask[]> = signal(JSON.parse(localStorage.getItem("completedTasks") ?? "[]"));
+
+  // Migration for short title suppport. If undefined, we need to set it here. 
+  public activeTasks: WritableSignal<ToDoTask[]> = signal(JSON.parse(localStorage.getItem("activeTasks") ?? "[]").map((item: ToDoTask) => 
+    new ToDoTask(item.title, item.id, item.date)
+));
+  
+  public completedTasks: WritableSignal<ToDoTask[]> = signal(JSON.parse(localStorage.getItem("completedTasks") ?? "[]").map((item: ToDoTask) =>
+     new ToDoTask(item.title, item.id, item.date)
+));
+  
   public date: WritableSignal<Date> = signal(JSON.parse(localStorage.getItem("date") ?? JSON.stringify(new Date())));
   
   count = 0;

@@ -1,11 +1,15 @@
 @use '@angular/material' as mat;
 @import './../../styles.scss';
 
+#task-list-wrapper {
+    outline: $orange solid 1px;
+    border-radius: 10px;
+}
 
-// Customize the entire app. Change :root to your selector if you want to scope the styles.
-mat-tab-group {
+table {
   @include mat.tabs-overrides((
     active-indicator-color: $orange,
+    active-focus-indicator-color: $orange,
     divider-color: red,
   ));
 }
