@@ -4,25 +4,21 @@
 #task-list-wrapper {
     outline: $orange solid 1px;
     border-radius: 10px;
+    width: 100%;
 }
 
+
 table {
-  @include mat.tabs-overrides((
+    @include mat.tabs-overrides((
     active-indicator-color: $orange,
     active-focus-indicator-color: $orange,
     divider-color: red,
   ));
-}
-
-table {
+  
     background-color: $foreground;
     border-radius: 10px;
-    padding: 10px;
-    width: 500px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    width: 100%;
+    padding: 1em 4em;
 }
 
 mat-tab-group tr {
@@ -32,26 +28,35 @@ mat-tab-group tr {
 }
 
 .task-item{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     color: $white;
     align-items: center;
-    padding: 10px;
-    margin-bottom: 5px;
-    border-width: 0px;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border-width: 0em;
     border-bottom: 2px;
     border-style: solid;
     border-color: $orange;
-    min-width: 416px;
+    .button-section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0.4em;
+    }
     button {
-        margin: 5px;
-        padding: 10px;
+        margin: 0.5em;
+        padding: 0.8em;
         height: fit-content;
         width: fit-content;
     }
 }
 
 .no-tasks {
+    width: 100%;
     color: $white;
     font-size: 20px;
     display: flex;

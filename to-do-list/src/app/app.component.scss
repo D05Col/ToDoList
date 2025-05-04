@@ -1,5 +1,4 @@
 @import './../styles.scss';
-// Not sure if centering main is good practice, but then again I'm not a professional CSSer
 .content {
     display: flex;
     align-items: center;
@@ -8,11 +7,13 @@
 }
 
 #name-and-list{
+    width: 40vw;
+    max-width: 60em;
     background-color: $frame;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 3em 4em;
     border-radius: 10px;
 }
