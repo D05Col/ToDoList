@@ -5,6 +5,7 @@
     outline: $orange solid 1px;
     border-radius: 10px;
     width: 100%;
+    min-width: 300px;
 }
 
 
@@ -14,12 +15,13 @@ table {
     active-focus-indicator-color: $orange,
     divider-color: red,
   ));
-  
+    width: 100%;
     background-color: $foreground;
     border-radius: 10px;
-    width: 100%;
     padding: 1em 4em;
 }
+
+
 
 mat-tab-group tr {
     display: flex;
