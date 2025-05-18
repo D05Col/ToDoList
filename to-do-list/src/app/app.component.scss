@@ -1,5 +1,4 @@
 @import './../styles.scss';
-// Not sure if centering main is good practice, but then again I'm not a professional CSSer
 .content {
     display: flex;
     align-items: center;
@@ -7,12 +6,28 @@
     flex-wrap: wrap;
 }
 
+#title-input {
+    display: flex;
+    justify-content: center;
+    min-width: 100px;
+    width: 30%;
+}
+#task-list {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+
 #name-and-list{
+    width: 40vw;
     background-color: $frame;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 3em 4em;
     border-radius: 10px;
 }
