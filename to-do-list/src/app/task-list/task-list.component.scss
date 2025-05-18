@@ -18,9 +18,19 @@ table {
     width: 100%;
     background-color: $foreground;
     border-radius: 10px;
-    padding: 1em 4em;
+    @media (min-width: 850px) {
+            padding: 1em 4em;
+    }
+    padding: 1em 1em;
 }
 
+.mat-mdc-tab-labels {
+    display: flex;
+    flex-direction: column !important;
+    @media (min-width: 450px) {
+        flex-direction: row !important;
+    }
+}
 
 
 mat-tab-group tr {
@@ -28,6 +38,7 @@ mat-tab-group tr {
     justify-content: center;
     align-items: center;
 }
+
 
 .task-item{
     width: 100%;
@@ -43,7 +54,10 @@ mat-tab-group tr {
     border-color: $orange;
     .button-section {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        @media (min-width: 1400px) {
+            flex-direction: row;
+        }
         flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
